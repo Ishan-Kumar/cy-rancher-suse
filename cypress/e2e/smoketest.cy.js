@@ -1,3 +1,5 @@
+import data from '../fixtures/data.json'
+
 describe('template spec', () => {
 
 
@@ -11,8 +13,8 @@ describe('template spec', () => {
   beforeEach(() => {
     // Visit the Rancher login page
     cy.visit('/auth/login')
-    cy.get(locators.login_username).type('admin')
-    cy.get(locators.login_password).type('admin@123456')
+    cy.get(locators.login_username).type(data.username)
+    cy.get(locators.login_password).type(data.password)
     cy.get(locators.login_submit).click()
   })
 
